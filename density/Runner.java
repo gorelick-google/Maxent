@@ -1390,7 +1390,7 @@ public class Runner {
 	boolean exponent = is("responseCurvesExponent");
 	if (oneVarProfile) samples = new Sample[0];
 	Utils.reportDoing(theSpecies + " response curves");
-	final HashMap<String, Double> map = new HashMap<>();
+	final HashMap<String, Object> map = new HashMap<>();
 	boolean[] isCategorical = new boolean[baseFeatures.length];
 	double[][] categories = new double[baseFeatures.length][];
 	double[] averages = sampleAverages(baseFeatures, samples, categories, isCategorical);
@@ -1451,7 +1451,7 @@ public class Runner {
 	    out.println("<br>");
     }
 
-    static double[][] responsePlotData(Grid projgrid, HashMap<String, Double> map, String var, double min, double max, double[] categories, boolean exponent) {
+    static double[][] responsePlotData(Grid projgrid, HashMap<String, Object> map, String var, double min, double max, double[] categories, boolean exponent) {
 	Object savedMean = map.get(var);
 	double[] x;
 	double minx = min - (max-min)/10, maxx = max + (max-min)/10;
